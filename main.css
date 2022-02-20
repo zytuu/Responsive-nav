@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    background-color: #222;
+    color: #fff;
+    padding-inline: 2em;
+    padding-block: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    gap: 2em;
+    position: relative;
+}
+
+.nav__brand {
+    /* This makes the logo part take a lot more space and allows for space between to work*/
+    flex: 1; 
+    font-size: 1.5rem;
+}
+
+.nav__item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__item a:hover {
+    color: rgb(188, 176, 255);
+    transition: 0.3s all linear;
+}
+
+.nav__toggle {
+    display: none;
+}
+
+.nav__toggle i {
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.nav__toggle i:hover {
+    color: rgb(188, 176, 255);
+    transition: 0.3s all linear;
+    cursor: pointer;
+}
+
+.hero-container {
+    display: flex;
+    height: calc(100vh - 94px);
+    background-image: url(./images/hero-backup.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.637);
+    background-blend-mode: overlay;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero__text h1{
+    font-size: clamp(2rem, 12.5vw, 4.5rem); 
+}
+
+.hero__text p {
+    font-size: clamp(1.25rem, 2vw, 1.25rem); 
+}
+
+@media only screen and (max-width: 700px) {
+    nav {
+        position: absolute;
+        width: 100%;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__item {
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+    
+    .hero-container {
+        min-height: 100vh;
+    }
+    
+}
